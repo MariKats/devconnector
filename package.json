@@ -4,8 +4,8 @@
   "description": "Social network for developers",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "server": "nodemon server.js"
+    "start": "node starter.js",
+    "server": "nodemon starter.js"
   },
   "author": "",
   "license": "ISC",
@@ -20,6 +20,8 @@
     "validator": "^10.4.0"
   },
   "devDependencies": {
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
     "nodemon": "^1.17.5"
   }
 }
