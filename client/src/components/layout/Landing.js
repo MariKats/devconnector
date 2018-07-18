@@ -27,13 +27,13 @@ class Landing extends Component {
                 <hr />
                 <Link
                   to="/register"
-                  className="btn btn-landing btn-outline-light mr-5 mt-4"
+                  className="btn btn-large btn-outline-light mr-5 mt-4"
                 >
                   Sign Up
                 </Link>
                 <Link
                   to="/login"
-                  className="btn btn-landing btn-outline-light mt-4"
+                  className="btn btn-large btn-outline-light mt-4"
                 >
                   Login
                 </Link>
