@@ -20,13 +20,13 @@ class Experience extends Component {
         <td>{exp.company}</td>
         <td>{exp.title}</td>
         <td className="from-to">
-          <Moment format="YYYY/MM/DD">{exp.from}</Moment>
+          <Moment format="DD/MM/YYYY">{exp.from}</Moment>
         </td>
         <td className="from-to">
           {isEmpty(exp.to) ? (
             "Present"
           ) : (
-            <Moment format="YYYY/MM/DD">{exp.to}</Moment>
+            <Moment format="DD/MM/YYYY">{exp.to}</Moment>
           )}
         </td>
         <td>

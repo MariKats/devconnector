@@ -53,7 +53,7 @@ export class Dashboard extends Component {
             </p>
             <Link
               to="/create-profile"
-              className="btn btn-large btn-outline-info mt-2"
+              className="btn btn-xlarge btn-outline-info mt-5"
             >
               Create Profile
             </Link>

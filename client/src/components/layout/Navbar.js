@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
@@ -10,7 +10,7 @@ class Navbar extends Component {
   onLogoutClick = e => {
     e.preventDefault();
     this.props.clearCurrentProfile();
-    this.props.logoutUser();
+    this.props.logoutUser(this.props.history);
   };
 
   render() {
@@ -21,13 +21,13 @@ class Navbar extends Component {
         <li className="nav-item">
           <a
             href=""
-            className="nav-link"
+            className="nav-link d-flex align-items-center"
             onClick={this.onLogoutClick.bind(this)}
           >
             <img
-              className="rounded-circle"
+              className="rounded-circle mr-2"
               src={user.avatar}
-              style={{ width: "25px", marginRight: "5px" }}
+              style={{ width: "25px" }}
               alt={user.name}
               title="You must have a gravatar connected to your email to display an image"
             />{" "}
@@ -103,4 +103,4 @@ const mapDispatchToProps = { logoutUser, clearCurrentProfile };
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Navbar);
+)(withRouter(Navbar));

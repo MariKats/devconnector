@@ -106,7 +106,7 @@ body {
 .rounded-circle-profile {
   width: 100px;
   height: 100px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
 }
 
 .btn-large {

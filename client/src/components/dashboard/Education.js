@@ -20,13 +20,13 @@ export class Education extends Component {
         <td>{edu.school}</td>
         <td>{edu.degree}</td>
         <td className="from-to">
-          <Moment format="YYYY/MM/DD">{edu.from}</Moment>
+          <Moment format="DD/MM/YYYY">{edu.from}</Moment>
         </td>
         <td className="from-to">
           {isEmpty(edu.to) ? (
             "Present"
           ) : (
-            <Moment format="YYYY/MM/DD">{edu.to}</Moment>
+            <Moment format="DD/MM/YYYY">{edu.to}</Moment>
           )}
         </td>
         <td>

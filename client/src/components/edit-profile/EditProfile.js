@@ -104,6 +104,7 @@ export class EditProfile extends Component {
     e.preventDefault();
     const profileData = {
       handle: this.state.handle,
+      bio: this.state.bio,
       company: this.state.company,
       website: this.state.website,
       location: this.state.location,
@@ -198,7 +199,7 @@ export class EditProfile extends Component {
             <div className="col-md-8 m-auto">
               <Link
                 to="/dashboard"
-                className="btn btn-outline-info btn-block mb-3 mt-3 float-left"
+                className="btn btn-outline-info btn-block mb-3 mt-3"
               >
                 Go Back
               </Link>
@@ -240,7 +241,7 @@ export class EditProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own or a company website"
+                  info="Could be your own or a company website (eg. https://coolsite.com)"
                 />
 
                 <TextFieldGroup

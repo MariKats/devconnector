@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
 import InputGroup from "../common/InputGroup";
@@ -50,6 +50,7 @@ export class CreateProfile extends Component {
     e.preventDefault();
     const profileData = {
       handle: this.state.handle,
+      bio: this.state.bio,
       company: this.state.company,
       website: this.state.website,
       location: this.state.location,
@@ -142,12 +143,12 @@ export class CreateProfile extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-8 m-auto">
-              <a
-                href="dashboard.html"
+              <Link
+                to="/dashboard"
                 className="btn btn-outline-info btn-block mb-3 mt-3"
               >
                 Go Back
-              </a>
+              </Link>
               <h1 className="display-4 text-center heading-primary heading-primary-profile">
                 Create Profile
               </h1>
@@ -186,7 +187,7 @@ export class CreateProfile extends Component {
                   value={this.state.website}
                   onChange={this.onChange}
                   error={errors.website}
-                  info="Could be your own or a company website"
+                  info="Could be your own or a company website (eg. https://coolsite.com)"
                 />
 
                 <TextFieldGroup
