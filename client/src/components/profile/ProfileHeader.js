@@ -10,9 +10,9 @@ class ProfileHeader extends Component {
         <div className="col-md-12">
           <div className="card card-body bg-info text-white mb-3">
             <div className="row d-flex justify-content-center align-items-center">
-              <div className="col-4 col-md-3 d-flex justify-content-center align-items-center">
+              <div className="col-3 col-md-2 d-flex justify-content-center align-items-center">
                 <img
-                  className="rounded-circle mb-2"
+                  className="rounded-circle border border-white mb-2"
                   src={profile.user.avatar}
                   alt="avatar"
                 />

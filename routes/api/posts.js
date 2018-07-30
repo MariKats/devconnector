@@ -50,16 +50,16 @@ router.post(
     if (!isValid) {
       // If any errors, send 400 with errors
       res.status(400).json(errors);
+    } else {
+      const newPost = new Post({
+        text: req.body.text,
+        name: req.body.name,
+        avatar: req.body.avatar,
+        user: req.user.id
+      });
+
+      newPost.save().then(post => res.json(post));
     }
-
-    const newPost = new Post({
-      text: req.body.text,
-      name: req.body.name,
-      avatar: req.body.avatar,
-      user: req.user.id
-    });
-
-    newPost.save().then(post => res.json(post));
   }
 );
 
@@ -100,12 +100,12 @@ router.post(
             post.likes.filter(like => like.user.toString() === req.user.id)
               .length > 0
           ) {
-            return req
+            return res
               .status(400)
               .json({ alreadyliked: "User has already liked this post" });
           }
 
-          // Add user id to likes
+          // Add user id to likes array
           post.likes.unshift({ user: req.user.id });
 
           post.save().then(post => res.json(post));
@@ -129,7 +129,7 @@ router.post(
             post.likes.filter(like => like.user.toString() === req.user.id)
               .length === 0
           ) {
-            return req
+            return res
               .status(400)
               .json({ notalreadyliked: "You have not yet liked this post" });
           }

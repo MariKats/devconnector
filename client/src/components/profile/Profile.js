@@ -21,6 +21,12 @@ export class Profile extends Component {
     }
   };
 
+  componentWillReceiveProps = nextProps => {
+    if (nextProps.profile.profile === null && this.props.profile.loading) {
+      this.props.history.push("/not-found");
+    }
+  };
+
   render() {
     const { profile, loading } = this.props.profile;
     let profileContent;
@@ -47,7 +53,7 @@ export class Profile extends Component {
             education={profile.education}
           />
           {profile.githubusername ? (
-            <ProfileGithub username={profile.username} />
+            <ProfileGithub username={profile.githubusername} />
           ) : null}
         </div>
       );
