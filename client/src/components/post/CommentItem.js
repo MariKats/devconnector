@@ -22,7 +22,7 @@ export class CommentItem extends Component {
       <div className="card card-body mb-3">
         <div className="row">
           <div className="col-md-2 d-flex justify-content-center align-items-center border-right">
-            <Link to={`/profiles/${comment.user}`}>
+            <Link to={`/profile/${comment.user}`}>
               <img
                 className="rounded-circle rounded-circle-profile d-none d-md-block"
                 src={comment.avatar}

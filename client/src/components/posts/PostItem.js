@@ -44,7 +44,7 @@ export class PostItem extends Component {
       <div className="card card-body mb-3">
         <div className="row">
           <div className="col-md-2 d-flex justify-content-center align-items-center border-right">
-            <Link to="/profiles">
+            <Link to={`/profiles`}>
               <img
                 className="rounded-circle rounded-circle-profile d-none d-md-block"
                 src={post.avatar}
@@ -103,11 +103,17 @@ export class PostItem extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  auth: state.auth
-});
+const mapStateToProps = state => {
+  return {
+    auth: state.auth
+  };
+};
 
-const mapDispatchToProps = { deletePost, addLike, removeLike };
+const mapDispatchToProps = {
+  deletePost,
+  addLike,
+  removeLike
+};
 
 export default connect(
   mapStateToProps,

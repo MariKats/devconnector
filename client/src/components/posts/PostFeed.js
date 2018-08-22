@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import PostItem from "./PostItem";
 
-export default class PostFeed extends Component {
+class PostFeed extends Component {
   static propTypes = {
     posts: PropTypes.array.isRequired
   };
@@ -12,3 +12,5 @@ export default class PostFeed extends Component {
     return posts.map(post => <PostItem key={post._id} post={post} />);
   }
 }
+
+export default PostFeed;

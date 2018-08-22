@@ -70,9 +70,12 @@ export class Profile extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  profile: state.profile
-});
+const mapStateToProps = state => {
+  console.log(state.profile);
+  return {
+    profile: state.profile
+  };
+};
 
 const mapDispatchToProps = { getProfileByHandle };
 
